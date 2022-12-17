@@ -1,0 +1,7 @@
+site_name: test encriptmail page
+
+plugins:
+    - search
+    - encriptmail:
+       placeholderAt: (Q)
+       placeholderDot: (P)
