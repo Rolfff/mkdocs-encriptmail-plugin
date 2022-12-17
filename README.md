@@ -24,7 +24,7 @@ into
 
 ```html
 <a href="javascript:linkTo_UnCryptMailto(%27ocknvq,vguvBvguv0vguv%27)">
-    test(@)test(P)test
+    test(Q)test(P)test
 </a>
 ```
 
