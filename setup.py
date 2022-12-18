@@ -9,7 +9,7 @@ def read_file(fname):
 
 setup(
     name='mkdocs-encriptmail-plugin',
-    version='0.9.5',
+    version='0.9.6',
     description='A MkDocs plugin that converts markdown encoded email-links into spambot save <a href> elements.',
 	long_description=read_file('README.md'),
     long_description_content_type='text/markdown',

@@ -3,7 +3,7 @@
 This [MkDocs](https://www.mkdocs.org) plugin converts markdown encoded email addresses like
 
 ```
-[Email-Link](test@test.test)
+[Email-Link](mailto:test@test.test)
 ```
 
 into 
@@ -17,7 +17,7 @@ into
 or
 
 ```
-[test@test.test](test@test.test)
+[test@test.test](mailto:test@test.test)
 ```
 
 into 

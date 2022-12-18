@@ -42,7 +42,7 @@ class encriptMailPlugin(BasePlugin):
 
     def on_page_markdown(self, markdown, page, config, **kwargs):
         """Search after E-Mail addresses"""
-        pattern = re.compile(r'\[(.*?)\]\(([a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.[a-zA-Z0-9]+))\)', flags=re.IGNORECASE)
+        pattern = re.compile(r'\[(.*?)\]\((mailto:[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.[a-zA-Z0-9]+))\)', flags=re.IGNORECASE)
         markdown = re.sub(pattern, self.__replace, markdown)     
         return markdown
 
@@ -89,7 +89,7 @@ class encriptMailPlugin(BasePlugin):
             linktext=linktext.replace("@", self.config.get("placeholderAt", "(Q)"))
             linktext=linktext.replace(".", self.config.get("placeholderDot", "."))
 
-        mail = self.__decryptString('mailto:'+mail ,+2)
+        mail = self.__decryptString(mail ,+2)
 
         ret = '<a href="javascript:linkTo_UnCryptMailto(%27' +mail+ '%27)">'+linktext+'</a>'
         return ret

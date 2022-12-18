@@ -6,11 +6,11 @@ Our image:
 
 ## Our mail:
 
-- [Email-Link](test@test.test)
+- [Email-Link](mailto:test@test.test)
 
-- [test2@test.test](test2@test.test)
+- [test2@test.test](mailto:test2@test.test)
 
-- test3@test.test
+- mailto:test3@test.test
 
 ## Ein anderer Link:
 
