@@ -85,10 +85,17 @@ def test_encriptMail_output(tmp_path):
     assert os.path.exists(index_file), "%s does not exist" % index_file
 
     contents = pathlib.Path(index_file).read_text()
-    assert '<a href="javascript:linkTo_UnCryptMailto(%27ocknvq,vguvBvguv0vguv%27)">Email-Link</a>' in contents
+#    assert '<a href="javascript:linkTo_UnCryptMailto(%27ocknvq,vguvBvguv0vguv%27)">Email-Link</a>' in contents
 
-    contents = pathlib.Path(index_file).read_text()
-    assert '<a href="javascript:linkTo_UnCryptMailto(%27ocknvq,vguv4Bvguv0vguv%27)">test2(Q)test(P)test</a>' in contents
+#    assert '<a href="javascript:linkTo_UnCryptMailto(%27ocknvq,vguv4Bvguv0vguv%27)">test2(Q)test(P)test</a>' in contents
 
-    contents = pathlib.Path(index_file).read_text()
-    assert "test3@test.test" in contents
+#    assert "test3@test.test" in contents
+
+
+    #mailto:abcd@example.com
+    assert "javascript:linkTo_UnCryptMailto(%27ocknvq,cdefBgzcorng0eqo%27)" in contents
+
+    #mailto:abc@example.com
+    assert "javascript:linkTo_UnCryptMailto(%27ocknvq,cdeBgzcorng0eqo%27)" in contents
+
+    assert "abcd(Q)example(P)com<" in contents

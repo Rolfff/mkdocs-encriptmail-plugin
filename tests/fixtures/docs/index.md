@@ -6,11 +6,15 @@ Our image:
 
 ## Our mail:
 
-- [Email-Link](test@test.test)
+- [Email-Link](mailto:test@test.test)
 
-- [test2@test.test](test2@test.test)
+- [test2@test.test](mailto:test2@test.test)
 
-- test3@test.test
+- mailto:test3@test.test
+
+- <a href= "mailto:abc@example.com">Send Email</a> 
+
+- <a href= "mailto:abcd@example.com">abcd@example.com</a> 
 
 ## Ein anderer Link:
 
