@@ -38,13 +38,22 @@ class encriptMailPlugin(BasePlugin):
             os.path.join(base_path, "js", "encriptmail.js"),
             os.path.join(js_path, "encriptmail.js"),
         )
+# This will be the better solution    
+#    def on_page_read_source(self, page, config, **kwargs):
+#        """Search after E-Mail addresses"""
+#        pattern = re.compile(r'\[(.*?)\]\((mailto:[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.[a-zA-Z0-9]+))\)', flags=re.IGNORECASE)
+#        page_utf8 = re.sub(pattern, self.__replace, page.content.encode("utf-8"))     
+#        return unicode(page_utf8, "utf-8")
+# Or at this time
+#    def on_page_markdown(self, html, page, config, **kwargs):
 
-
-    def on_page_markdown(self, markdown, page, config, **kwargs):
+    def on_page_content(self, html, page, config, **kwargs):
         """Search after E-Mail addresses"""
-        pattern = re.compile(r'\[(.*?)\]\((mailto:[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.[a-zA-Z0-9]+))\)', flags=re.IGNORECASE)
-        markdown = re.sub(pattern, self.__replace, markdown)     
-        return markdown
+        patternMailto = re.compile(r'mailto:[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.[a-zA-Z0-9]+)', flags=re.IGNORECASE)
+        html = re.sub(patternMailto, self.__replace_mailto, html)  
+        patternMailAddress = re.compile(r'[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.[a-zA-Z0-9]+)', flags=re.IGNORECASE)
+        html = re.sub(patternMailAddress, self.__replace_address, html)
+        return html
 
     def __isMail(self, text):
         ret = False
@@ -93,3 +102,14 @@ class encriptMailPlugin(BasePlugin):
 
         ret = '<a href="javascript:linkTo_UnCryptMailto(%27' +mail+ '%27)">'+linktext+'</a>'
         return ret
+
+    def __replace_mailto(self, m):
+        mailtoString = m.group(0)
+        return 'javascript:linkTo_UnCryptMailto(%27' + self.__decryptString(mailtoString ,+2) + '%27)'
+
+    def __replace_address(self, m):
+        mailaddressString = m.group(0)
+        mailaddressString=mailaddressString.replace("@", self.config.get("placeholderAt", "(Q)"))
+        mailaddressString=mailaddressString.replace(".", self.config.get("placeholderDot", "."))
+        return mailaddressString
+           

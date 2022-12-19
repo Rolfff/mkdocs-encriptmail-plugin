@@ -12,6 +12,10 @@ Our image:
 
 - mailto:test3@test.test
 
+- <a href= "mailto:abc@example.com">Send Email</a> 
+
+- <a href= "mailto:abcd@example.com">abcd@example.com</a> 
+
 ## Ein anderer Link:
 
 - [Test-Link](https://test.test)
