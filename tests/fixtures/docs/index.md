@@ -8,9 +8,6 @@ Our image:
 
 - [Email-Link](mailto:test@test.test)
 
-- [Email-Link](mailto:t.e-s_t@t-e-st.test)
-- [no.re-plyy@vcp-rhein-main.de](mailto:no.re-ply@vcp-rhein-main.de)
-
 - [test2@test.test](mailto:test2@test.test)
 
 - mailto:test3@test.test
@@ -18,6 +15,10 @@ Our image:
 - <a href= "mailto:abc@example.com">Send Email</a> 
 
 - <a href= "mailto:abcd@example.com">abcd@example.com</a> 
+
+- <a href= "mailto:abcd@example.co_m<">abcd@example.co_m</a> 
+
+- <a href= "mailto:ab-cd@exa-mple.com">ab-cd@exa-mple.com</a> 
 
 ## Ein anderer Link:
 

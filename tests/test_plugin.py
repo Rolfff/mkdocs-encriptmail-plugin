@@ -98,4 +98,10 @@ def test_encriptMail_output(tmp_path):
     #mailto:abc@example.com
     assert "javascript:linkTo_UnCryptMailto(%27ocknvq,cdeBgzcorng0eqo%27)" in contents
 
+    #mailto:abcd@example.co_m
+    assert "javascript:linkTo_UnCryptMailto(%27ocknvq,cdefBgzcorng0eq_o%27)" in contents
+
+    #mailto:ab-cd@exa-mple.com
+    assert "javascript:linkTo_UnCryptMailto(%27ocknvq,cd/efBgzc/orng0eqo%27)" in contents
+
     assert "abcd(Q)example(P)com<" in contents
