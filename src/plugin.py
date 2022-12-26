@@ -49,9 +49,9 @@ class encriptMailPlugin(BasePlugin):
 
     def on_page_content(self, html, page, config, **kwargs):
         """Search after E-Mail addresses"""
-        patternMailto = re.compile(r'mailto:[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.[a-zA-Z0-9]+)', flags=re.IGNORECASE)
+        patternMailto = re.compile(r'mailto:[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9]+\.)?[a-zA-Z_.+-]+\.[a-zA-Z0-9_.+-]+)', flags=re.IGNORECASE)
         html = re.sub(patternMailto, self.__replace_mailto, html)  
-        patternMailAddress = re.compile(r'[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.[a-zA-Z0-9]+)', flags=re.IGNORECASE)
+        patternMailAddress = re.compile(r'[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9]+\.)?[a-zA-Z_.+-]+\.[a-zA-Z0-9_.+-]+)', flags=re.IGNORECASE)
         html = re.sub(patternMailAddress, self.__replace_address, html)
         return html
 

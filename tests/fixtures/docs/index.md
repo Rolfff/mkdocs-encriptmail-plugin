@@ -16,6 +16,10 @@ Our image:
 
 - <a href= "mailto:abcd@example.com">abcd@example.com</a> 
 
+- <a href= "mailto:abcd@example.co_m<">abcd@example.co_m</a> 
+
+- <a href= "mailto:ab-cd@exa-mple.com">ab-cd@exa-mple.com</a> 
+
 ## Ein anderer Link:
 
 - [Test-Link](https://test.test)
